@@ -61,6 +61,6 @@ for(const name of fs.readdirSync(root).filter(name=>name.endsWith('.html'))){
   .replace(/Ver (?:mi )?hoja de vida/g,'Descargar hoja de vida')
   .replace(/Ver CV(?: completo)?/g,'Descargar CV')
   .replace(/<span(?: aria-hidden="true")?>↗<\/span>/g,'<span aria-hidden="true">↓</span>'));
- fs.writeFileSync(path,updated);
+ fs.writeFileSync(path,require('./language-switch.cjs')(updated));
 }
 console.log('Created 5 detail pages and updated home navigation.');
