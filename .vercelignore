@@ -1,0 +1,9 @@
+.git
+.openai
+.vercel
+tmp
+__pycache__
+release-assets
+vercel-public
+dist/downloads/*.exe
+source-assets/CV Juan Delgado.pdf

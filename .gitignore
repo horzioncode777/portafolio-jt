@@ -1,0 +1,11 @@
+/.openai/
+/.vercel/
+/tmp/
+/__pycache__/
+/vercel-public/
+/release-assets/
+/dist/downloads/*.exe
+/source-assets/CV Juan Delgado.pdf
+.env
+.env.*
+!.env.example
