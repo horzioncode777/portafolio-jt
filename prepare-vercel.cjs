@@ -33,7 +33,9 @@ if(!checkOnly){
   const destination=path.join(staging,file);
   fs.mkdirSync(path.dirname(destination),{recursive:true});
   if(pages.includes(file)){
-   const html=fs.readFileSync(path.join(source,file),'utf8').replaceAll('href="downloads/Soulmate-Setup-0.6.0.exe"',`href="${downloadUrl}"`);
+   const html=fs.readFileSync(path.join(source,file),'utf8').replaceAll('href="downloads/Soulmate-Setup-0.6.0.exe"',`href="${downloadUrl}"`)
+    // Use canonical URLs in production while keeping the local HTML preview usable.
+    .replace(/href="(index|sobre-mi|proyectos|habilidades|experiencia|contacto)\.html([?#][^"]*)?"/g,(_,page,suffix='')=>`href="/${page==='index'?'':page}${suffix}"`);
    fs.writeFileSync(destination,html);
   }else fs.copyFileSync(path.join(source,file),destination);
  }
