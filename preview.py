@@ -11,7 +11,7 @@ import urllib.request
 import webbrowser
 
 ROOT = Path(__file__).resolve().parent
-URL = 'http://127.0.0.1:4173/contacto.html'
+URL = 'http://127.0.0.1:4173/'
 
 
 class PortfolioHandler(SimpleHTTPRequestHandler):
@@ -58,6 +58,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
     try:
         if args.serve:
+            if not (ROOT / 'dist/index.html').is_file():
+                raise RuntimeError('Ejecuta node build-pages.cjs antes de abrir la vista previa.')
             handler = partial(PortfolioHandler, directory=str(ROOT / 'dist'))
             server = ThreadingHTTPServer(('127.0.0.1', 4173), handler)
             print(f'Portafolio: {URL}', flush=True)

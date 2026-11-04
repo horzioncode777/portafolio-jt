@@ -4,9 +4,9 @@
 __pycache__/
 *.py[cod]
 /vercel-public/
+/dist/
 /release-assets/
 /dist/downloads/*.exe
-/source-assets/CV Juan Delgado.pdf
 .env
 .env.*
 !.env.example
