@@ -1,4 +1,3 @@
-// Formación indicada en la hoja de vida del usuario.
 function update(home){
  return home.replace(/(<section class="experience section-block" id="experiencia">)([\s\S]*?)(<\/section>)/,(_,start,body,end)=>{
   body=body.replace(/<article><span class="timeline-dot"><\/span><div class="timeline-meta">2022 — 2026[\s\S]*?<\/article>/,'');

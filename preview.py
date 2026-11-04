@@ -1,4 +1,4 @@
-"""Local portfolio preview and double-click launcher. Uses Python's standard library."""
+"""Servidor local del portafolio."""
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path

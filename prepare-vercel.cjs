@@ -26,7 +26,6 @@ for(const file of files){
  if(fs.statSync(resolved).size>25*1024*1024)throw Error('Archivo demasiado grande para la web: '+file);
 }
 if(!checkOnly){
- // A new staging folder prevents old private/unused files from surviving a build.
  fs.mkdirSync(path.join(root,'tmp'),{recursive:true});
  const staging=fs.mkdtempSync(path.join(root,'tmp','vercel-stage-'));
  for(const file of files){
@@ -34,12 +33,10 @@ if(!checkOnly){
   fs.mkdirSync(path.dirname(destination),{recursive:true});
   if(pages.includes(file)){
    const html=fs.readFileSync(path.join(source,file),'utf8').replaceAll('href="downloads/Soulmate-Setup-0.6.0.exe"',`href="${downloadUrl}"`)
-    // Use canonical URLs in production while keeping the local HTML preview usable.
     .replace(/href="(index|sobre-mi|proyectos|habilidades|experiencia|contacto)\.html([?#][^"]*)?"/g,(_,page,suffix='')=>`href="/${page==='index'?'':page}${suffix}"`);
    fs.writeFileSync(destination,html);
   }else fs.copyFileSync(path.join(source,file),destination);
  }
- // Keep the previous output recoverable rather than recursively deleting it.
  if(fs.existsSync(output))fs.renameSync(output,path.join(root,'tmp','vercel-previous-'+Date.now()));
  fs.renameSync(staging,output);
 }

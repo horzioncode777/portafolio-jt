@@ -33,7 +33,7 @@ for(const [slug,page] of Object.entries(content)){
 }
 let home=fs.readFileSync(root+'index.html','utf8');
 home=home.replace(/<section id="proyectos"[\s\S]*?<\/section>/,projectCatalog.featured());
-home=home.replace(/<section id="proyectos-en-curso"[\s\S]*?<\/section>/,'');
+home=home.replace(/<section id="proyectos-en-curso"[\s\S]*?<\/section>\s*/,'');
 home=home.replace('<section class="skills section-block"',projectCatalog.ongoing()+'\n<section class="skills section-block"');
 home=home.replace(/<header class="nav-shell">[\s\S]*?<\/header>/,header('index'));
 home=home.replace(/<dialog[\s\S]*?<\/dialog>/,'');
@@ -51,7 +51,7 @@ home=require('./home-education.cjs').update(home);
 home=contactDesign.updateHome(home);
 home=home.replace('<span>CONOCE AL DESARROLLADOR</span>','');
 home=home.replaceAll('J<span>T</span><i>.</i>','<img src="assets/jt-brand-logo.png" alt="Juan Esteban Torres Delgado · Desarrollador Full Stack" width="1535" height="1024">');
-fs.writeFileSync(root+'index.html',home);
+fs.writeFileSync(root+'index.html',home.replace(/\n{3,}/g,'\n\n'));
 for(const name of fs.readdirSync(root).filter(name=>name.endsWith('.html'))){
  const path=root+name;
  const html=contactDesign.removeNumbering(fs.readFileSync(path,'utf8')).replaceAll('CV-Juan-Delgado.pdf','CV_Juan_Esteban_Torres_Delgado_ATS.pdf');

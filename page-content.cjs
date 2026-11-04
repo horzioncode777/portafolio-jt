@@ -1,5 +1,3 @@
-// Contenido ampliado basado en la hoja de vida proporcionada.
-// Las tecnologías conocidas se distinguen de las aplicadas explícitamente en la experiencia.
 module.exports = function enrich(content, {panel, tags, link}) {
  const section = (id,label,title,body)=>`<section id="${id}" class="content-section"><div class="section-heading"><div><div class="kicker">${label}</div><h2>${title}</h2></div></div>${body}</section>`;
  const card = (number,title,text)=>`<article class="detail-panel evidence-card"><span class="evidence-number">${number}</span><h3>${title}</h3><p>${text}</p></article>`;

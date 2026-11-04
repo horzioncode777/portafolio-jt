@@ -1,4 +1,3 @@
-// Shared swipe/drag carousel for project previews and the in-page image viewer.
 (() => {
  const galleries=[...document.querySelectorAll('.project-gallery')];
  if(!galleries.length)return;
@@ -39,7 +38,7 @@
    else return;
    event.preventDefault();go(next);
   });
-  // Touch keeps native scrolling and scroll-snap. Mouse drag uses the same track.
+  // El desplazamiento táctil lo gestiona el navegador.
   track.addEventListener('pointerdown',event=>{
    if(event.pointerType!=='mouse'||event.button!==0||slides.length<2)return;
    suppressClick=false;
@@ -113,7 +112,6 @@
   });
  });
  dialog.addEventListener('keydown',event=>{
-  // The close button sits outside the carousel region.
   if(event.target.closest('.lightbox-gallery'))return;
   if(event.key==='ArrowRight'||event.key==='ArrowLeft'){
    event.preventDefault();modalCarousel?.go(modalCarousel.current()+(event.key==='ArrowRight'?1:-1));
