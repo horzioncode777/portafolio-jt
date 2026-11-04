@@ -1,4 +1,3 @@
-// Verificado en manifiestos, documentación y código de los tres proyectos locales.
 const projects = [
  {name:'Wireless Cooking',logo:'assets/wireless-cooking-logo.png',logoClass:'wireless',summary:'React · Express · Wompi · AWS',description:'Desarrollo Full Stack para comercio electrónico: interfaces, autenticación, pedidos, integración de pagos y despliegue.',skills:['React y Tailwind CSS','Node.js y Express','PostgreSQL','Autenticación JWT','Pagos con Wompi','AWS EC2 y RDS']},
  {name:'Piano Soulmate',logo:'assets/soulmate-logo.svg',logoClass:'soulmate',summary:'Electron · Web MIDI · Web Audio · WAV',description:'Aplicación de escritorio con entrada MIDI, motor de audio integrado, bancos de sonido, grabación y distribución para Windows.',skills:['Electron','Web MIDI API','Web Audio y AudioWorklet','Bancos de sonido','Grabación WAV','Empaquetado para Windows']},

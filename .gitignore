@@ -1,7 +1,8 @@
 /.openai/
 /.vercel/
 /tmp/
-/__pycache__/
+__pycache__/
+*.py[cod]
 /vercel-public/
 /release-assets/
 /dist/downloads/*.exe
