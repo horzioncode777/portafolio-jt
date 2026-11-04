@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version-file: .python-version
-      - name: Probar el verificador
+      - name: Probar el sitio y el verificador
         run: python -m unittest discover -s tests
       - name: Comprobar JavaScript
         run: python scripts/check_site.py --syntax
