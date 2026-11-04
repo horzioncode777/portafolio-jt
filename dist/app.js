@@ -29,7 +29,6 @@ copyButton?.addEventListener('click',async()=>{
   }
 });
 
-// Conserva el comportamiento de teclado de <summary> y permite invertir la animación.
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 document.querySelectorAll('.project-learning').forEach(card=>{
   const summary=card.querySelector('summary');

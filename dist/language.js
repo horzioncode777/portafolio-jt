@@ -1,4 +1,3 @@
-// Local, reversible translations: no translation service, URL change or page reload.
 (() => {
  const english=window.portfolioEnglish||{};
  const reverse=new Map(Object.entries(english).map(([es,en])=>[en,es]));
@@ -16,7 +15,7 @@
   return value;
  }
  function convert(value,state,context){
-  // Capture changes made by the menu, carousel and form without losing the Spanish source.
+  // Conserva el texto original cuando cambia un control dinámico.
   if(!state||value!==state.last)state={source:hasRendered&&language==='en'?(reverse.get(value)||value):value,last:value};
   const source=state.source,trimmed=source.trim();
   let translated=translate(trimmed);

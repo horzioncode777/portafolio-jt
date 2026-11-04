@@ -1,4 +1,3 @@
-// Classic script also runs when a local file blocks ES module imports.
 const contactForm=document.querySelector('#contact-form');
 if(contactForm){
  const status=document.querySelector('#contact-form-status');
