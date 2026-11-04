@@ -1,0 +1,8 @@
+const colombia='<svg viewBox="0 0 28 20" aria-hidden="true"><path fill="#FCD116" d="M0 0h28v10H0z"/><path fill="#003893" d="M0 10h28v5H0z"/><path fill="#CE1126" d="M0 15h28v5H0z"/></svg>';
+const usa='<svg viewBox="0 0 28 20" aria-hidden="true"><path fill="#fff" d="M0 0h28v20H0z"/><path stroke="#B22234" stroke-width="1.54" d="M0 .77h28M0 3.85h28M0 6.92h28M0 10h28M0 13.08h28M0 16.15h28M0 19.23h28"/><path fill="#3C3B6E" d="M0 0h12v10.77H0z"/><path fill="#fff" d="M2 1.2h1v1H2zm4 0h1v1H6zm4 0h1v1h-1zM4 3.3h1v1H4zm4 0h1v1H8zM2 5.4h1v1H2zm4 0h1v1H6zm4 0h1v1h-1zM4 7.5h1v1H4zm4 0h1v1H8z"/></svg>';
+module.exports=html=>{
+ html=html.replace(/<link rel="stylesheet" href="language\.css[^"\s]*">/g,'').replace(/<script src="(?:i18n-en|language)\.js[^"\s]*" defer><\/script>/g,'');
+ const button=`<button class="language-toggle" type="button" aria-label="Cambiar a inglés" title="Cambiar a inglés" aria-pressed="false"><span class="language-flag language-flag-es">${colombia}</span><span class="language-flag language-flag-en" hidden>${usa}</span><span class="language-code" aria-hidden="true">ES</span><svg class="language-swap" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h10l-3-3M13 11H3l3 3"/></svg></button>`;
+ return (html.includes('class="language-toggle"')?html:html.replace(/(<a class="cv-link"[\s\S]*?<\/a>)/,`<div class="nav-actions">$1${button}</div>`))
+  .replace('</head>','<link rel="stylesheet" href="language.css?v=1"><script src="i18n-en.js?v=1" defer></script><script src="language.js?v=1" defer></script></head>');
+};
