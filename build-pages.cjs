@@ -7,6 +7,7 @@ const output = path.join(project,'dist');
 fs.mkdirSync(path.join(project,'tmp'),{recursive:true});
 const staging = fs.mkdtempSync(path.join(project,'tmp','build-'));
 fs.cpSync(path.join(project,'src/public'),staging,{recursive:true});
+fs.appendFileSync(path.join(staging,'i18n-en.js'),'\nObject.assign(window.portfolioEnglish,'+JSON.stringify(require('./src/content/trading-project.cjs').translations)+');\n');
 fs.copyFileSync(path.join(project,'src/templates/index.html'),path.join(staging,'index.html'));
 const root = staging + path.sep;
 fs.mkdirSync(root+'downloads',{recursive:true});

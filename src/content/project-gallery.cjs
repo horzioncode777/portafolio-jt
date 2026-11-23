@@ -31,14 +31,7 @@ const piano = [
  ['assets/piano-gallery/03.png','Efectos · Reverberación, compresor, ecualizador y chorus'],
  ['assets/piano-gallery/04.png','Ajustes · Conexiones MIDI y salida de audio']
 ];
-const trading = [
- ['assets/trading-ia-app.png','Terminal de Trading IA · Vista general en cuenta demo'],
- ['assets/trading-gallery/01.png','Seguimiento de mercados y panel del motor de análisis'],
- ['assets/trading-gallery/02.png','Explorador de activos, búsqueda y favoritos'],
- ['assets/trading-gallery/03.png','Historial de operaciones en cuenta demo'],
- ['assets/trading-gallery/04.png','Actividad del mercado y métricas de operaciones demo'],
- ['assets/trading-gallery/05.png','Gráfico de velas y estado de verificación del activo']
-];
+const trading = require('./trading-project.cjs').gallery;
 function gallery(project){
  const images=project.id==='contexto'?municipal:project.id==='grado'?wireless:project.id==='piano'?piano:project.id==='trading-ia'?trading:[[project.image,project.alt]];
  const multiple=images.length>1;

@@ -6,6 +6,8 @@
 
 Mi portafolio reúne experiencia en desarrollo Full Stack, formación y proyectos web, de escritorio y audio digital.
 
+Bastión Executive es la evolución del proyecto de Trading IA: una plataforma local con MetaTrader 5, ASTRA, ASTRA-LAB y Options Demo. Su ficha documenta la integración de JavaScript, Node.js y Python, los modelos con scikit-learn y la validación walk-forward. Las capturas muestran la interfaz actual sin una cuenta conectada.
+
 ## Qué incluye
 
 - Páginas de inicio, perfil, proyectos, habilidades, experiencia y contacto.
@@ -79,6 +81,7 @@ LICENSE                     Derechos de uso
 | Formación y experiencia | `src/content/home-education.cjs` y `src/content/experience-content.cjs` |
 | Habilidades | `src/content/home-skills.cjs` y `src/content/skills-content.cjs` |
 | Proyectos, tecnologías, funcionalidades y contribución | `src/content/project-catalog.cjs` |
+| Datos y traducciones de Bastión Executive | `src/content/trading-project.cjs` |
 | Capturas y leyendas de los proyectos | `src/content/project-gallery.cjs` y `src/public/assets/` |
 | Datos y formulario de contacto | `src/content/contact-page.cjs`, `src/content/contact-design.cjs` y `src/public/contact-api.mjs` |
 | Traducciones al inglés | `src/public/i18n-en.js` |
