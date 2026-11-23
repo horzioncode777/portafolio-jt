@@ -486,3 +486,7 @@ window.portfolioEnglish = {
   "El servicio ha recibido tu mensaje para enviarlo a Juan. ¡Gracias por escribirme!": "The service has received your message for delivery to Juan. Thank you for getting in touch!",
   "No se pudo confirmar el envío. Tu mensaje sigue aquí: intenta de nuevo o escríbeme a juanes.2529.delgado@gmail.com.": "We could not confirm delivery. Your message is still here: try again or email me at juanes.2529.delgado@gmail.com."
 };
+
+Object.assign(window.portfolioEnglish, {"Descargar CV en español e inglés":"Download CV in Spanish and English","Dos PDF: español e inglés":"Two PDFs: Spanish and English","Descarga de hojas de vida":"CV downloads","Cerrar aviso de descarga":"Close download notice","Tus hojas de vida":"Your CVs","Español e inglés, en dos PDF separados.":"Spanish and English, as two separate PDFs.","Español · PDF ↓":"Spanish · PDF ↓","Inglés · PDF ↓":"English · PDF ↓"});
+
+Object.assign(window.portfolioEnglish, {"Si tu navegador pide permiso, permite las descargas múltiples. También puedes descargar cada PDF aquí.":"If your browser asks, allow multiple downloads. You can also download each PDF here."});

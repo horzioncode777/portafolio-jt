@@ -86,7 +86,7 @@ LICENSE                     Derechos de uso
 
 Después de editar, ejecuta `node build-pages.cjs` y revisa el resultado en local. Edita las plantillas y los módulos de `src/`; los cambios hechos directamente en `dist/` se reemplazan al construir. Si cambias textos en español, actualiza también su traducción en `src/public/i18n-en.js`.
 
-Para reemplazar el CV, actualiza `src/downloads/CV_Juan_Esteban_Torres_Delgado_ATS.pdf` y vuelve a construir. Para añadir imágenes, guárdalas en `src/public/assets/`, usa nombres sin espacios y actualiza las rutas, dimensiones y textos alternativos correspondientes.
+Para reemplazar las hojas de vida, actualiza `src/downloads/Juan-Esteban-Torres-Delgado-CV-ES.pdf` y `src/downloads/Juan-Esteban-Torres-Delgado-CV-EN.pdf` y vuelve a construir. El botón Descargar CV solicita ambos PDF por separado; si el navegador limita las descargas múltiples, el aviso ofrece enlaces individuales. Para añadir imágenes, guárdalas en `src/public/assets/`, usa nombres sin espacios y actualiza las rutas, dimensiones y textos alternativos correspondientes.
 
 Para publicar una nueva versión de Piano Soulmate, crea su GitHub Release y actualiza `soulmateDownloadUrl` en `deployment-config.json`. El instalador se distribuye desde Releases y no se incluye en los archivos web.
 

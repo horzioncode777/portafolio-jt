@@ -10,8 +10,7 @@ fs.cpSync(path.join(project,'src/public'),staging,{recursive:true});
 fs.copyFileSync(path.join(project,'src/templates/index.html'),path.join(staging,'index.html'));
 const root = staging + path.sep;
 fs.mkdirSync(root+'downloads',{recursive:true});
-fs.copyFileSync(path.join(project,'src/downloads/CV_Juan_Esteban_Torres_Delgado_ATS.pdf'),root+'downloads/CV_Juan_Esteban_Torres_Delgado_ATS.pdf');
-fs.copyFileSync(path.join(project,'src/downloads/CV_Juan_Esteban_Torres_Delgado_EN.pdf'),root+'downloads/CV_Juan_Esteban_Torres_Delgado_EN.pdf');
+for(const file of require('./src/content/cv-downloads.cjs').files)fs.copyFileSync(path.join(project,'src/downloads',file),root+'downloads/'+file);
 const pages = [ ['index','Inicio'],['sobre-mi','Sobre mí'],['proyectos','Proyectos'],['habilidades','Habilidades'],['experiencia','Experiencia'],['contacto','Contacto'] ];
 function header(active){return `<header class="nav-shell"><a class="logo" href="index.html" aria-label="Juan Torres, inicio"><img src="assets/jt-brand-logo.png" alt="Juan Esteban Torres Delgado · Desarrollador Full Stack" width="1535" height="1024"></a><nav id="main-navigation" aria-label="Navegación principal">${pages.map(([slug,name])=>`<a href="${slug}.html"${slug===active?' class="active" aria-current="page"':''}>${name}</a>`).join('')}</nav><a class="cv-link" href="cv.html" target="_blank" rel="noopener">Ver CV <span>↗</span></a><button class="menu-toggle" aria-label="Abrir menú" aria-controls="main-navigation" aria-expanded="false">☰</button></header>`}
 function footer(){return `<footer><a class="logo" href="index.html" aria-label="Volver al inicio"><img src="assets/jt-brand-logo.png" alt="Juan Esteban Torres Delgado · Desarrollador Full Stack" width="1535" height="1024"></a><p>Juan Esteban Torres Delgado <span>·</span> Desarrollo Full Stack</p><a href="#contenido">Volver arriba ↑</a></footer>`}
@@ -62,7 +61,7 @@ for(const name of fs.readdirSync(root).filter(name=>name.endsWith('.html'))){
   .replace(/Ver (?:mi )?hoja de vida/g,'Descargar hoja de vida')
   .replace(/Ver CV(?: completo)?/g,'Descargar CV')
   .replace(/<span(?: aria-hidden="true")?>↗<\/span>/g,'<span aria-hidden="true">↓</span>'));
- fs.writeFileSync(path,require('./src/content/language-switch.cjs')(updated).replaceAll('href="downloads/Soulmate-Setup-0.6.0.exe"',`href="${soulmateDownloadUrl}"`));
+ fs.writeFileSync(path,require('./src/content/cv-downloads.cjs')(require('./src/content/language-switch.cjs')(updated)).replaceAll('href="downloads/Soulmate-Setup-0.6.0.exe"',`href="${soulmateDownloadUrl}"`));
 }
 if(fs.existsSync(output))fs.renameSync(output,path.join(project,'tmp','dist-previous-'+Date.now()));
 fs.renameSync(staging,output);
