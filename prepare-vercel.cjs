@@ -14,7 +14,7 @@ if(!downloadUrl && !checkOnly){
  throw Error('Falta publicar Soulmate en GitHub Releases y guardar su enlace en deployment-config.json.');
 }
 const texts=fs.readdirSync(source).filter(file=>/\.(css|js|mjs)$/.test(file));
-const files=new Set([...pages,...texts,'downloads/CV_Juan_Esteban_Torres_Delgado_ATS.pdf']);
+const files=new Set([...pages,...texts,'downloads/CV_Juan_Esteban_Torres_Delgado_ATS.pdf','downloads/CV_Juan_Esteban_Torres_Delgado_EN.pdf']);
 for(const file of [...pages,...texts]){
  const content=fs.readFileSync(path.join(source,file),'utf8');
  for(const match of content.matchAll(/assets\/[a-zA-Z0-9_.\/-]+/g))files.add(match[0]);
