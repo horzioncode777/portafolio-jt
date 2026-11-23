@@ -5,7 +5,7 @@ function enhance(html){
   .replace(/href="[^"]*"/,`href="downloads/${files[0]}"`)
   .replace(/\s(?:download|data-cv-download|data-cv-en|aria-label|title)(?:="[^"]*")?/g,'')
   .replace(/>$/,` download="${files[0]}" data-cv-download data-cv-en="${files[1]}" aria-label="Descargar CV en español e inglés" title="Dos PDF: español e inglés">`));
- return html.replace('</head>','<link rel="stylesheet" href="cv-downloads.css?v=1"><script src="cv-downloads.js?v=1" defer></script></head>');
+ return html.replace('</head>','<link rel="stylesheet" href="cv-downloads.css?v=1"><script src="cv-downloads.js?v=2" defer></script></head>');
 }
 enhance.files=files;
 module.exports=enhance;

@@ -4,7 +4,7 @@
  function showNotice(urls){
   if(!notice){
    notice=document.createElement('aside');notice.className='cv-download-notice';notice.setAttribute('aria-label','Descarga de hojas de vida');
-   notice.innerHTML='<button class="cv-notice-close" type="button" aria-label="Cerrar aviso de descarga">×</button><div role="status"><strong>Tus hojas de vida</strong><p>Español e inglés, en dos PDF separados.</p></div><div class="cv-file-links"><a>Español · PDF ↓</a><a>Inglés · PDF ↓</a></div><p class="cv-download-help">Si tu navegador pide permiso, permite las descargas múltiples. También puedes descargar cada PDF aquí.</p>';
+   notice.innerHTML='<button class="cv-notice-close" type="button" aria-label="Cerrar aviso de descarga">×</button><div role="status"><strong>Mi hoja de vida</strong><p>Español e inglés, en dos PDF separados.</p></div><div class="cv-file-links"><a>Español · PDF ↓</a><a>Inglés · PDF ↓</a></div><p class="cv-download-help">Si tu navegador pide permiso, permite las descargas múltiples. También puedes descargar cada PDF aquí.</p>';
    notice.querySelector('button').addEventListener('click',()=>{notice.hidden=true;});
    document.addEventListener('keydown',event=>{if(event.key==='Escape')notice.hidden=true;});
    document.body.append(notice);

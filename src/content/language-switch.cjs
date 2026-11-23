@@ -4,5 +4,5 @@ module.exports=html=>{
  html=html.replace(/<link rel="stylesheet" href="language\.css[^"\s]*">/g,'').replace(/<script src="(?:i18n-en|language)\.js[^"\s]*" defer><\/script>/g,'');
  const button=`<button class="language-toggle" type="button" aria-label="Cambiar a inglés" title="Cambiar a inglés" aria-pressed="false"><span class="language-flag language-flag-es">${colombia}</span><span class="language-flag language-flag-en" hidden>${usa}</span><span class="language-code" aria-hidden="true">ES</span><svg class="language-swap" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h10l-3-3M13 11H3l3 3"/></svg></button>`;
  return (html.includes('class="language-toggle"')?html:html.replace(/(<a class="cv-link"[\s\S]*?<\/a>)/,`<div class="nav-actions">$1${button}</div>`))
-  .replace('</head>','<link rel="stylesheet" href="language.css?v=1"><script src="i18n-en.js?v=1" defer></script><script src="language.js?v=1" defer></script></head>');
+  .replace('</head>','<link rel="stylesheet" href="language.css?v=1"><script src="i18n-en.js?v=2" defer></script><script src="language.js?v=1" defer></script></head>');
 };
